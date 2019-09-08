@@ -1,0 +1,35 @@
+.projects {
+  &__project {
+    display: grid;
+    grid-gap: unit(1/2);
+  
+    @media screen and(min-width: $breakpoint-sm) {
+      grid-template-columns: repeat(1, 40fr 60fr);
+    }
+
+    &__image {
+      h4 {
+        margin-bottom: unit(1/4);
+        @media screen and(min-width: $breakpoint-sm) {
+          display: none;
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    &__info {
+      h4 {
+        display: none;
+        @media screen and(min-width: $breakpoint-sm) {
+          display: block;
+        }
+      }
+    }
+
+    & + .projects__project {
+      margin-top: unit(1/2);
+    }
+  }
+}

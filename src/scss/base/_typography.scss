@@ -1,0 +1,155 @@
+html {
+  font-size: 1px;
+}
+
+body {
+  font-size: $font-size-base;
+
+  font-family: $font-family;
+  font-weight: $font-weight-normal;
+
+  line-height: $line-height;
+
+  color: $color-black;
+  background-color: $color-white;
+
+  padding-bottom: unit(1);
+}
+
+a,
+a:visited {
+  color: $color-primary-3;
+}
+
+a:hover {
+  color: $color-primary-2;
+}
+
+::selection {
+  background-color: $color-primary-2;
+  color: $color-white;
+}
+
+h1,
+.h1 {
+  font-size: font-size($font-size-h1);
+  font-weight: $font-weight-bold;
+  margin: 0;
+  margin-top: unit(1/4);
+  margin-bottom: unit(1/2);
+}
+h2,
+.h2 {
+  font-size: font-size($font-size-h2);
+  font-weight: $font-weight-bold;
+  margin: 0;
+  margin-top: unit(1/4);
+  margin-bottom: unit(1/2);
+}
+h3,
+.h3 {
+  font-size: font-size($font-size-h3);
+  font-weight: $font-weight-bold;
+  margin: 0;
+  margin-top: unit(1/8);
+  margin-bottom: unit(1/4);
+}
+h4,
+.h4 {
+  font-size: font-size($font-size-h4);
+  font-weight: $font-weight-bold;
+  margin: 0;
+  margin-top: unit(1/16);
+  margin-bottom: unit(1/8);
+}
+h5,
+.h5 {
+  font-size: font-size($font-size-h5);
+  font-weight: $font-weight-bold;
+  margin: 0;
+}
+h6,
+.h6 {
+  font-size: font-size($font-size-h6);
+  font-weight: $font-weight-bold;
+  margin: 0;
+}
+
+a,
+a:hover,
+a:visited {
+  color: $color-primary-2;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.h1,
+a.h2,
+a.h3,
+a.h4,
+a.h5,
+a.h6 {
+  display: block;
+}
+
+b,
+strong {
+  font-weight: $font-weight-bold;
+}
+
+p {
+  margin: 0;
+  margin-bottom: unit(1/2);
+}
+
+code {
+  padding: unit(1/8);
+}
+
+pre {
+  padding: unit(1);
+
+  overflow-x: auto;
+  scrollbar-color: #FFF #000;
+  
+  cursor: text;
+
+  code {
+    padding: 0;
+  }
+}
+
+code,
+pre {
+  background-color: #000;
+  color: #FFF;
+
+  &::selection,
+  *::selection {
+    background-color: #FFF;
+    background-color :rgba(255, 255, 255, 0.99);
+    color: #000;
+  }
+}
+
+.underlined {
+  border-bottom: unit(1/16) solid $color-black;
+}
+
+h1.underlined {
+  padding-bottom: unit(1/4);
+}
+
+h2.underlined {
+  padding-bottom: unit(1/4);
+}
+
+h3.underlined {
+  padding-bottom: unit(1/8);
+}
+
+h4.underlined {
+  padding-bottom: unit(1/16);
+}

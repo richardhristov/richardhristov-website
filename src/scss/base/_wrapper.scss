@@ -1,0 +1,38 @@
+.wrapper {
+  &__content {
+    padding-left: unit(1/2);
+    padding-right: unit(1/2);
+  
+    max-width: $breakpoint-md;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and(min-width: $breakpoint-sm) {
+
+    &__content-left {
+      display: inline-block;
+      vertical-align: top;
+      width: 62%;
+      padding-right: unit(1/2);
+    }
+    &__content-right {
+      display: inline-block;
+      vertical-align: top;
+      width: 38%;
+      padding-left: unit(1/2);
+    }
+  }
+
+  &--target {
+    margin-top: -($header-height);
+    padding-top: $header-height;
+  }
+
+  & + .wrapper {
+    margin-top: unit(1);
+  }
+  & + .wrapper--target {
+    margin-top: -($header-height) + unit(1);
+  }
+}

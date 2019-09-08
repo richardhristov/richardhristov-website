@@ -1,0 +1,130 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: $header-height;
+  line-height: $header-height;
+  background-color: $color-primary-4;
+  color: $color-white;
+
+  z-index: $z-index-header;
+
+  font-size: font-size($font-size-h3);
+  font-weight: $font-weight-bold;
+
+  box-shadow: 0 0 unit(1/8) unit(1/8) adjust-color($color-primary-4, $alpha: -0.6);
+
+  a {
+    color: inherit;
+
+    display: block;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+  }
+
+  &__name {
+    transition: color .4s ease-in-out;
+    &:hover {
+      color: $color-complement-1;
+    }
+  }
+
+  &__menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    top: $header-height;
+    left: 0;
+    right: 0;
+
+    max-height: 0vh;
+    overflow: hidden;
+
+    background-color: $color-primary-3;
+    @media screen and(min-width: $breakpoint-sm) {
+      max-height: 100vh;
+      position: static;
+      margin-left: auto;
+      background-color: transparent;
+      display: flex;
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    margin: auto;
+    margin-right: 0;
+    @media screen and(min-width: $breakpoint-sm) {
+      display: none;
+    }
+    cursor: pointer;
+  }
+
+  &__hamburger {
+    display: inline-block;
+    cursor: pointer;
+  
+    &__line {
+      width: 35px;
+      height: 5px;
+      background-color: $color-white;
+      margin: 6px 0;
+      transition: all .4s ease-in-out;
+    }
+  }
+
+  &__toggle-checkbox {
+    display: none;
+  }
+
+  &__toggle-checkbox:checked + &__toggle {
+    .header__hamburger__line {
+      background-color: $color-complement-1;
+    }
+
+    .header__hamburger__line--1 {
+      transform: rotate(-45deg) translate(-8px, 8px) ;
+    }
+    
+    .header__hamburger__line--2 {
+      opacity: 0;
+    }
+    
+    .header__hamburger__line--3 {
+      transform: rotate(45deg) translate(-8px, -8px) ;
+    }
+  }
+
+  &__toggle-checkbox:checked + &__toggle + &__menu {
+    transition: max-height 1s ease-in-out;
+    max-height: 100vh;
+    box-shadow: 0 0 unit(1/8) unit(1/8) adjust-color($color-primary-4, $alpha: -0.6);
+  }
+
+  &__menu-item {
+    padding: 0;
+    a {
+      transition: background-color .4s ease-in-out;
+      padding: unit(1);
+      @media screen and(min-width: $breakpoint-sm) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      &:hover {
+        background-color: $color-primary-3;
+      }
+    }
+  }
+}
+
+body {
+  padding-top: $header-height;
+}

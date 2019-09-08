@@ -1,0 +1,19 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+<title>{{ title }} - {{ config.title }}</title>
+<meta property="og:title" content="{{ title }} - {{ config.title }}" />
+<meta name="twitter:title" content="{{ title }} - {{ config.title }}" />
+{% endblock %}
+
+{% block body %}
+{% include "layout-header.njk" %}
+
+<div class="wrapper">
+  <main class="wrapper__content">
+    {% block content %}{{ contents | safe }}{% endblock %}
+  </main>
+</div>
+
+{% include "layout-footer.njk" %}
+{% endblock %}

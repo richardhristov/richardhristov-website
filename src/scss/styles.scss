@@ -1,0 +1,49 @@
+@import "../../node_modules/normalize.css/normalize";
+
+@import "colors.scss";
+
+$color-black: $color-primary-4;
+$color-white: #FFF;
+
+$font-size-base: 16rem;
+$line-height: 1.5;
+
+$font-size-h1: 3;
+$font-size-h2: 2;
+$font-size-h3: 1.5;
+$font-size-h4: 1.25;
+$font-size-h5: 1;
+$font-size-h6: 1;
+
+$font-family: 'Lato', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$unit: $font-size-base*$line-height;
+
+@function unit($base) {
+  @return $base*$unit;
+}
+
+@function font-size($base) {
+  @return $base*$font-size-base;
+}
+
+$header-height: unit(3);
+
+$z-index-header: 1000;
+
+$breakpoint-sm: 768px;
+$breakpoint-md: 1200px;
+
+@import "base/mixins.scss";
+@import "base/reset.scss";
+@import "base/typography.scss";
+@import "base/forms.scss";
+@import "base/wrapper.scss";
+
+@import "header.scss";
+@import "footer.scss";
+@import "masthead.scss";
+@import "technologies.scss";
+@import "projects.scss";

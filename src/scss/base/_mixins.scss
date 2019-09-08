@@ -1,0 +1,20 @@
+@mixin animatedBackground($color1, $color2) {
+  background: linear-gradient(270deg, $color2, $color1);
+  background-size: 400% 400%;
+
+  -webkit-animation: animatedBackground 20s ease infinite;
+  -moz-animation: animatedBackground 20s ease infinite;
+  animation: animatedBackground 20s ease infinite;
+
+  @keyframes animatedBackground { 
+    0%{
+      background-position: 0% 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 50%;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.masthead {
+  width: 100%;
+  height: 100vh;
+
+  margin-top: -($header-height) !important;
+  padding-top: $header-height + unit(4);
+
+  text-align: center;
+
+  color: $color-white;
+  text-shadow: unit(1/32) unit(1/12) $color-black;
+  @include animatedBackground($color-primary-2, $color-secondary-1-2);
+
+  position: relative;
+
+  box-shadow: 0 0 unit(1) unit(1/4) adjust-color($color-primary-4, $alpha: -0.6) inset;
+
+  @keyframes animatedCaret {
+    50% {
+      border-color: transparent;
+    }
+  }
+  &__caret {
+    padding-left: unit(1/8);
+    border-right: unit(1/8) solid $color-white;
+    animation: animatedCaret 1s steps(1) infinite;
+  }
+
+  &__continue {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-bottom: unit(1/2);
+  }
+
+  &__continue-desktop {
+    display: none;
+  }
+  &__continue-mobile {
+    display: block;
+  }
+  @media screen and(min-width: $breakpoint-sm) {
+    &__continue-desktop {
+      display: block;
+    }
+    &__continue-mobile {
+      display: none;
+    }
+  }
+
+  @keyframes animatedArrow {
+    0% {
+      transform: translateY(0); }
+    50% {
+      transform: translateY(-(unit(1/4)));
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .arrow {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: unit(1/8);
+
+    border-color: $color-white;
+
+    -webkit-animation: animatedArrow 1s ease infinite;
+    -moz-animation: animatedArrow 1s ease infinite;
+    animation: animatedArrow 1s ease infinite;
+  }
+}
+
+.arrow {
+  display: inline-block;
+  border: unit(1/16) solid $color-black;
+  border-radius: 50%;
+  padding: unit(1/4);
+  line-height: unit(1/16);
+
+  &::after {
+    content: "";
+    /* We create a square element with a border on two sides,
+      then rotate it in 45 degree increments to get an arrow */
+    border-style: inherit;
+    border-color: inherit;
+    border-width: 0 unit(1/8) unit(1/8) 0;
+    display: inherit;
+    padding: unit(1/8);
+
+    position: relative;
+  }
+
+  &.arrow--right::after {
+    right: unit(1/16);
+    transform: rotate(-45deg);
+  }
+  
+  &.arrow--left::after {
+    right: -(unit(1/16));
+    transform: rotate(135deg);
+  }
+  
+  &.arrow--up::after {
+    top: unit(1/16);
+    transform: rotate(-135deg);
+  }
+  
+  &.arrow--down::after {
+    top: -(unit(1/16));
+    transform: rotate(45deg);
+  }
+}

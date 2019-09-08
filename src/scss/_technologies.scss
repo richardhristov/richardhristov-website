@@ -1,0 +1,20 @@
+.technologies {
+  padding-top: unit(1);
+  
+  margin-left: -(unit(1));
+  margin-right: -(unit(1));
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__technology {
+    width: unit(4);
+    margin: 0 unit(2) unit(1) unit(2);
+
+    text-align: center;
+    &__image {
+      width: unit(4);
+    }
+  }
+}
